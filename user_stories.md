@@ -15,35 +15,37 @@ by: Prima Prasertrat
 
 
 #MODELS
-Voter
--first_name:string
--last_name:string
--email:string
+Voter  
+-first_name:string  
+-last_name:string  
+-email:string  
 -rsvp:boolean
 
-Playlist
--voter_id:integer
+Playlist  
+-voter_id:integer  
 -type:string
 
-Song
--name:string
--artist:string
+Song  
+-name:string  
+-artist:string  
 -album:string
 
-SongsToPlaylist
--playlist_id:integer
+SongsToPlaylist  
+-playlist_id:integer  
 -song_id:integer
 
 
 #ASSOCIATIONS
 Voter has_many :playlists
 
-Playlist belongs_to :voter
-Playlist has_many :songstoplaylists
+Playlist belongs_to :voter  
+Playlist has_many :songstoplaylists  
 Playlist has_many :songs, through songstoplaylists
 
-Song has_many :songstoplaylists
+Song has_many :songstoplaylists  
 Song has_many :playlists, through songstoplaylists
 
-SongsToPlaylist belongs_to :playlist
+SongsToPlaylist belongs_to :playlist  
 SongsToPlaylist belongs_to :song
+
+
