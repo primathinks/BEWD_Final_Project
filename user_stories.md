@@ -15,7 +15,7 @@ by: Prima Prasertrat
 
 
 #MODELS
-Voter  
+User  
 -first_name:string  
 -last_name:string  
 -email:string  
@@ -36,7 +36,7 @@ SongsToPlaylist
 
 
 #ASSOCIATIONS
-Voter has_many :playlists
+User has_many :playlists
 
 Playlist belongs_to :voter  
 Playlist has_many :songstoplaylists  
