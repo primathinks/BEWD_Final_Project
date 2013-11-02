@@ -2,7 +2,7 @@ BEWD: FINAL PROJECT
 -------------------
 
 #PROJECT NAME
-I Do! Playlist Maker
+Wedding Playlist Maker
 by: Prima Prasertrat
 
 
@@ -16,7 +16,7 @@ Male and females between the ages of 24-50 comprise the bulk of wedding guests. 
 
 
 #FUNCTIONALITY
-Guests are invited to create two playlists: "I Do" and "I Do NOT". Users can search for songs to add to each playlist. They may also vote on songs from existing playlists.
+Guests are invited to create two playlists: "Love" and "HATE". Users can search for songs to add to each playlist. They may also vote on songs from existing playlists.
 
 The home page of Wedding Music Maker aggregates and displays the 10 most loved and hated songs side by side. Administrators can view all results to shape their wedding playlist.
 

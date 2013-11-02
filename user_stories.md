@@ -2,7 +2,7 @@ BEWD: FINAL PROJECT
 -------------------
 
 #PROJECT NAME
-I Do! Playlist Maker
+Wedding Playlist Maker
 by: Prima Prasertrat
 
 
@@ -22,7 +22,7 @@ User
 -rsvp:boolean
 
 Playlist  
--voter_id:integer  
+-user_id:integer  
 -type:string
 
 Song  
@@ -38,7 +38,7 @@ SongsToPlaylist
 #ASSOCIATIONS
 User has_many :playlists
 
-Playlist belongs_to :voter  
+Playlist belongs_to :user  
 Playlist has_many :songstoplaylists  
 Playlist has_many :songs, through songstoplaylists
 
