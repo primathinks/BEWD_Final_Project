@@ -22,10 +22,11 @@ User
 -rsvp:boolean
 
 Playlist  
--user_id:integer  
 -type:string
+-user_id:integer
 
-Song  
+Song
+-lastfm_id:integer  
 -name:string  
 -artist:string  
 -album:string
