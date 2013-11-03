@@ -1,2 +1,31 @@
 <h1>Songs</h1>
 <p>Search for songs here.</p>
+
+<%= form_tag("/songs", method: "get") do %>
+  <%= text_field_tag :q, params[:q] %>
+  <%= submit_tag("Search") %>
+<% end %>
+<br />
+
+
+<h3>Search Results</h3>
+
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Artist</th>
+		<th>Album</th>
+		<th>Date</th>
+	</tr>
+<% @results.each do |track| %>
+	<tr>
+		<td><%= track[:name] %></td>
+		<td><%= track[:artist] %></td>
+		<td><%= track[:album] %></td>
+		<td><%= track[:date] %></td>
+	</tr>
+<% end %>
+</table>
+
+<%= params.inspect %>
+
