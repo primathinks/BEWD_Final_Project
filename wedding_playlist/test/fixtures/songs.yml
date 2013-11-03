@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  lastfm_id: 1
+  name: MyString
+  artist: MyString
+  album: MyString
+
+two:
+  lastfm_id: 1
+  name: MyString
+  artist: MyString
+  album: MyString
