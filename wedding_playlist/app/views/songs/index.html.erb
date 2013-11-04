@@ -1,5 +1,4 @@
-<h1>Songs</h1>
-<p>Search for songs here.</p>
+<h1>Search Songs</h1>
 
 <%= form_tag("/songs", method: "get") do %>
   <%= text_field_tag :q, params[:q] %>
@@ -21,10 +20,14 @@
 		<td><%= song["trackName"] %></td>
 		<td><%= song["artistName"] %></td>
 		<td><%= song["collectionName"] %></td>
-		<td></td>
+		<td><%= link_to 'Add this song', {:controller => "songs", 
+                       :action => "create", 
+                       :external_id => song["trackId"], 
+                       :name => song["trackName"], 
+                       :artist => song["artistName"], 
+                       :album => song["collectionName"]},
+                       :method => "post" %></td>
 	</tr>
 	<% end %>
 </table>
-
-<%= params.inspect %>
 

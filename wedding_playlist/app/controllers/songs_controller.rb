@@ -1,18 +1,25 @@
 class SongsController < ApplicationController
   def index
     if params[:q]
-      @query = params[:q].gsub(" ", "+") 
+      @query = params[:q]
     end
-    @results = ITunesSearchAPI.search(:term => @query, :country => "US", :media => "music", :limit => 20)
+    @results = ITunesSearchAPI.search(:term => @query, :country => "US", :media => "music")
   end
 
   def create
-  	@song = Song.new(:lastfm_id => params[:lastfm_id])
+    @song = Song.new(song_params)
   	if @song.save
-  		redirect_to root_path
+  		redirect_to songs_path
+      flash[:notice] = "Song successfully created"
   	else
-  		redirect_to root_path
+  		redirect_to songs_path
+      flash[:notice] = "Song failed"
   	end
+  end
+
+  private
+  def song_params
+    params.permit(:external_id, :name, :artist, :album)
   end
 
 end

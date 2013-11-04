@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131103011916) do
+ActiveRecord::Schema.define(version: 20131104035809) do
 
   create_table "playlist_songs", force: true do |t|
     t.integer  "playlist_id"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20131103011916) do
   end
 
   create_table "songs", force: true do |t|
-    t.integer  "lastfm_id"
+    t.integer  "external_id"
     t.string   "name"
     t.string   "artist"
     t.string   "album"
