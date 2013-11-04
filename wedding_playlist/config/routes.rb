@@ -3,6 +3,7 @@ WeddingPlaylist::Application.routes.draw do
   root 'welcome#index'
   resources :playlists
   resources :songs
+  resources :playlist_songs, :only => [:create] 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -8,6 +8,9 @@ class SongsController < ApplicationController
 
   def show
     @song = Song.find params[:id]
+    @song_length = Time.at(@song.duration/1000).strftime("%M:%S")
+    @playlist_song = PlaylistSong.new
+    @playlists = Playlist.find_all_by_user_id(current_user.id)
   end
 
   def create
