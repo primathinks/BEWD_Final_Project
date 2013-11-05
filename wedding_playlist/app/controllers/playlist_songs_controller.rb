@@ -8,4 +8,10 @@ class PlaylistSongsController < ApplicationController
       		#do nothing
       	end
 	end
+
+	def destroy
+		@playlist_song = PlaylistSong.find(params[:id])
+		@playlist_song.destroy
+		redirect_to playlist_path(@playlist_song.playlist_id), :notice => "Your song has been deleted."
+	end
 end

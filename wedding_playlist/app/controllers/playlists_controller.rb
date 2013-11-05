@@ -5,7 +5,7 @@ class PlaylistsController < ApplicationController
 
   def show
     @playlist = Playlist.find params[:id]
-    @songs = PlaylistSong.find_all_by_playlist_id(@playlist.id)
+    @playlist_songs = PlaylistSong.find_all_by_playlist_id(@playlist.id)
   end
 
   def new
