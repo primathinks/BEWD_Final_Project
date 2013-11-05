@@ -23,5 +23,24 @@ class PlaylistsController < ApplicationController
     end
   end
 
-  
+  def edit
+    @playlist = Playlist.find params[:id]
+  end
+
+  def update
+    safe_playlist_params = params.require(:playlist).permit(:name)
+    @playlist = Playlist.find params[:id]
+    if @playlist.update_attributes(safe_playlist_params)
+      redirect_to @playlist
+    else
+      #render :new
+    end
+  end
+
+  def destroy
+    @playlist = Playlist.find params[:id]
+    @playlist.destroy
+    redirect_to playlists_path, :notice => "Your playlist has been deleted."
+  end
+
 end
