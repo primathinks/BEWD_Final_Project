@@ -1,6 +1,6 @@
 <h3>Your Playlists</h3>
 <% @playlists.each do |playlist| %>
-	<p><%= link_to playlist.name, playlist %><br />
+	<p><%= link_to playlist.name, playlist %> (<%= playlist.songs.count %> songs)<br />
 		<%= link_to "Rename", edit_playlist_path(playlist) %> | 
 		<%= link_to 'Delete', playlist, :confirm => "Are you sure?", :method => "delete" %>
 	<p><br />

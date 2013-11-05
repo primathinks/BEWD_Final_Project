@@ -1,6 +1,6 @@
 <h3><%= @song.name %></h3>
 <%= image_tag(@song.thumb100) %><br />
-<%= audio_tag(@song.audio, :controls => true) %>
+<%= audio_tag(@song.audio, :controls => true, :preload => "none") %>
 
 <p>Artist: <%= @song.artist %><br />
 Album: <%= @song.album %><br />

@@ -10,7 +10,7 @@ class SongsController < ApplicationController
     @song = Song.find params[:id]
     @song_length = Time.at(@song.duration/1000).strftime("%M:%S")
     @playlist_song = PlaylistSong.new
-    @playlists = Playlist.find_all_by_user_id(current_user.id)
+    @playlists = Playlist.where(user_id: current_user.id).order(updated_at: :desc)
   end
 
   def create
