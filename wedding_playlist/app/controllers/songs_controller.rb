@@ -2,6 +2,7 @@ class SongsController < ApplicationController
   def index
     if params[:q]
       @query = params[:q]
+      @search_results = true
     end
     @results = ITunesSearchAPI.search(:term => @query, :country => "US", :media => "music", :limit => 20)
   end
